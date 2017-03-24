@@ -25,6 +25,11 @@ npm run e2e
 
 # run all tests
 npm test
+
+＃关于node
+需要先启动node服务才能访问接口，在config/index.js中已经配置好了proxyTable，只须执行以下步骤。
+cd server
+node index.js
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
