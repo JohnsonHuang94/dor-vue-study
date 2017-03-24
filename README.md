@@ -1,7 +1,6 @@
 # dormitory
 
-> dormitory app
-
+> 学习vue，熟悉开发流程
 ## Build Setup
 
 ``` bash
