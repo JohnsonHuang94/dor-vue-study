@@ -1,0 +1,41 @@
+.slide-up-enter-active,.slide-up-leave-active,.slide-down-enter-active,.slide-down-leave-active{
+  transition: all 0.3s ease;
+}
+//进入时上滑
+.slide-up-enter, .slide-up-leave-active{
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+//j进入时下滑
+.slide-down-enter, .slide-down-leave-active{
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+//路由切换
+.bounce-enter-active{
+  animation: bounce-in 0.5s ease-in-out 0.2s;
+}
+.bounce-leave-active{
+  animation: bounce-out 0.2s ease-in-out;
+}
+@keyframes bounce-in{
+  0%{
+    transform: translateY(100%);
+  }
+  50%{
+    transform: translateY(-10%)
+  }
+  100%{
+    transform: translateY(0%)
+  }
+}
+@keyframes bounce-out{
+  0%{
+    transform: translateY(0%);
+  }
+  100%{
+    transform: translateY(100%)
+  }
+}

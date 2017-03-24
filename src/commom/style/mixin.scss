@@ -1,0 +1,64 @@
+//前缀，构建时可用 autoprefixer 包来代替
+@mixin box-sizing($sizing){
+	box-sizng: $sizing;
+	-webkit-box-sizing: $sizing;
+	-moz-box-sizing: $sizing;
+	-o-box-sizing: $sizing;
+}
+
+//px转rem, 构建时可用 px2rem 代替
+$baseFontSize: 75px !default;
+@function px2rem($px){
+	return $px / baseFontSize * 1rem
+}
+
+//判断，三目运算等
+$condition: true
+body{
+	width: if($condition, 1px, 2px) //得到1px
+	height: if(false, 1px, 2px)    //得到2px
+}
+
+$prama: cc
+body{
+	@if $prama == aa{
+		display: block;
+	}@else if $prama == bb{
+		display: inline;
+	}@else if $prama == cc{
+		display: inline-block;
+	}@else{
+		display: flex;
+	}
+}
+
+//for循环
+@for $i from 1 througt 10{
+	.item-#{$i} {
+		width: 10px * $i;
+	}
+}
+
+//each循环
+$pic: p1, p2, p3, p4;
+@each $p in $pic{
+	.#{$p}-icon {
+		background-image: url('/images/#{$p}.png')
+	}
+}
+
+$pic: (p1, color1, cursor1), (p2, color2, cursor2), (p3, color3, cursor3);
+@each $p, $color, $cursor in $pic{
+	.#{$p}-icon {
+		background-image: url('/images/#{$p}.png');
+		color: $color;
+		cursor: $cursor;
+	}
+}
+
+$head: (h1: 2rem, h2: 1.5rem, h3: 1rem);
+@each $h, $size in $head{
+	#{$h} {
+		font-size: $size;
+	}
+}
